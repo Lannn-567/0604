@@ -15,7 +15,7 @@ for message in st.session_state.chat_history:
         st.markdown(message["content"])
 
 # 處理輸入
-if user_input := st.chat_input("請輸入提問（例如：50字以內？）"):
+if user_input := st.chat_input("請輸入提問（限制50字以內）"):
     st.chat_message("user").markdown(user_input)
     st.session_state.chat_history.append({"role": "user", "content": user_input})
     
